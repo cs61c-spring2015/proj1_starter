@@ -1,0 +1,10 @@
+Error - extra argument at line 3: $t0
+Error - invalid label at line 7: 3hello
+Error - extra argument at line 9: sll
+Error: name 'label' already exists in table.
+Error - extra argument at line 13: 5
+Error - invalid instruction at line 9: l2: addiu $t3 $t1
+Error - invalid instruction at line 11: addiu $t3 $t5 3
+Error - invalid instruction at line 12: ori $t1 $t0 0xFFFFFFFF
+Error - invalid instruction at line 13: bne $t0 $t1 not_found
+One or more errors encountered during assembly operation.
