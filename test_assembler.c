@@ -4,13 +4,13 @@
 
 #include <CUnit/Basic.h>
 
-#include "utils.h"
-#include "tables.h"
-#include "translate_utils.h"
-#include "translate.h"
+#include "src/utils.h"
+#include "src/tables.h"
+#include "src/translate_utils.h"
+#include "src/translate.h"
 
-const char* tmp_file = "test_assembler_tmp.txt";
-const int buf_size = 200;
+const char* TMP_FILE = "test_output.txt";
+const int BUF_SIZE = 1024;
 
 /****************************************
  *  Helper functions 
@@ -21,20 +21,20 @@ int do_nothing() {
 }
 
 int init_log_file() {
-    set_log_file(tmp_file);
+    set_log_file(TMP_FILE);
     return 0;
 }
 
 int check_lines_equal(char **arr, int num) {
-    char buf[buf_size];
+    char buf[BUF_SIZE];
 
-    FILE *f = fopen(tmp_file, "r");
+    FILE *f = fopen(TMP_FILE, "r");
     if (!f) {
         CU_FAIL("Could not open temporary file");
         return 0;
     }
     for (int i = 0; i < num; i++) {
-        if (!fgets(buf, buf_size, f)) {
+        if (!fgets(buf, BUF_SIZE, f)) {
             CU_FAIL("Reached end of file");
             return 0;
         }

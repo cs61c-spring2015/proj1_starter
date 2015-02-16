@@ -86,21 +86,17 @@ int translate_inst(FILE* output, const char* name, char** args, size_t num_args,
    translate_reg() to parse registers and write_inst_hex() to write to 
    OUTPUT. Both are defined in translate_utils.h.
 
-   This function is INCOMPLETE. Complete the implementation below.
+   This function is INCOMPLETE. Complete the implementation below. You will
+   find bitwise operations to be the cleanest way to complete this function.
  */
 int write_rtype(uint8_t funct, FILE* output, char** args, size_t num_args) {
-    if (num_args != 3) {
-        return -1;
-    }
+    // Perhaps perform some error checking?
 
     int rd = translate_reg(args[0]);
     int rs = translate_reg(args[1]);
     int rt = translate_reg(args[2]);
-    if (rd < 0 || rs < 0 || rt < 0) {
-        return -1;
-    }
 
-    uint32_t instruction = (rs << 21) | (rt << 16) | (rd << 11) | funct;
+    uint32_t instruction = 0;
     write_inst_hex(output, instruction);
     return 0;
 }
@@ -109,22 +105,18 @@ int write_rtype(uint8_t funct, FILE* output, char** args, size_t num_args) {
    translate_num() to parse numerical arguments. translate_num() is defined
    in translate_utils.h.
 
-   This function is INCOMPLETE. Complete the implementation below.
+   This function is INCOMPLETE. Complete the implementation below. You will
+   find bitwise operations to be the cleanest way to complete this function.
  */
 int write_shift(uint8_t funct, FILE* output, char** args, size_t num_args) {
-    if (num_args != 3) {
-        return -1;
-    }
+	// Perhaps perform some error checking?
 
     long int shamt;
     int rd = translate_reg(args[0]);
     int rt = translate_reg(args[1]);
     int err = translate_num(&shamt, args[2], 0, 31);
-    if (rd < 0 || rt < 0 || err) {
-        return -1;
-    }
 
-    uint32_t instruction = (rt << 16) | (rd << 11) | (shamt << 6) | funct;
+    uint32_t instruction = 0;
     write_inst_hex(output, instruction);
     return 0;
 }

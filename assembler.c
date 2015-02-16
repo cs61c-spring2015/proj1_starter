@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "utils.h"
-#include "tables.h"
-#include "translate_utils.h"
-#include "translate.h"
+#include "src/utils.h"
+#include "src/tables.h"
+#include "src/translate_utils.h"
+#include "src/translate.h"
 #include "assembler.h"
 
 const int MAX_ARGS = 3;

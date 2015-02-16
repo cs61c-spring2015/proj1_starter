@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -g -std=gnu99 -Wall
 CUNIT = -L/home/ff/cs61c/cunit/install/lib -I/home/ff/cs61c/cunit/install/include -lcunit
-ASSEMBLER_FILES = utils.c tables.c translate_utils.c translate.c
+ASSEMBLER_FILES = src/utils.c src/tables.c src/translate_utils.c src/translate.c
 
 all: assembler
 
