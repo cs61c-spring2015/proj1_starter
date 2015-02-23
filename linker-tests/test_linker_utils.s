@@ -89,7 +89,7 @@ test_inst_needs_relocation:
 	jr $ra
 
 #-------------------------------------------
-# Tests calc_relocate_inst() from linker_utils.s
+# Tests relocate_inst() from linker_utils.s
 #-------------------------------------------
 test_relocate_inst:
 	addiu $sp, $sp, -4
