@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+extern const int SYMTBL_NON_UNIQUE;      // allows duplicate names in table
+extern const int SYMTBL_UNIQUE_NAME;     // duplicate names not allowed
+
 /* Complete the following definition of SymbolTable and implement the following
    functions. You are free to declare additional structs or functions, but you
    must build this data structure yourself. 
@@ -18,6 +21,7 @@ typedef struct {
     Symbol* tbl;
     uint32_t len;
     uint32_t cap;
+    int mode;
 } SymbolTable;
 
 /* Helper functions: */
