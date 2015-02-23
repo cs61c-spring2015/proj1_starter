@@ -1,17 +1,15 @@
 .text
-00851021
 00e83025
 01200008
 0150502a
-0253882b
 3c0b007b
 82080000
 0c000000
 354b0abc
 
 .symbol
-4	label
-32	l1
+0	label
+24	l1
 
 .relocation
-28	label
+20	label

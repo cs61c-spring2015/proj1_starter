@@ -107,7 +107,8 @@ static int add_if_label(uint32_t input_line, char* str, uint32_t byte_offset,
     2. If the first token is not a label, treat it as the name of an instruction.
     3. Everything after the instruction name should be treated as arguments to
         that instruction. If there are more than MAX_ARGS arguments, call
-        raise_extra_arg_error() and pass in the first extra argument.
+        raise_extra_arg_error() and pass in the first extra argument. Do not 
+        write that instruction to the output file (eg. don't call write_pass_one())
     4. Only one instruction should be present per line. You do not need to do 
         anything extra to detect this - it should be handled by guideline 3. 
     5. A line containing only a label is valid. The address of the label should
