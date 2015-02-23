@@ -191,8 +191,8 @@ static void close_files(FILE* input, FILE* output) {
 int assemble(const char* in_name, const char* tmp_name, const char* out_name) {
     FILE *src, *dst;
     int err = 0;
-    SymbolTable* symtbl = create_table();
-    SymbolTable* reltbl = create_table();
+    SymbolTable* symtbl = create_table(SYMTBL_UNIQUE_NAME);
+    SymbolTable* reltbl = create_table(SYMTBL_NON_UNIQUE);
 
     if (in_name) {
         printf("Running pass one: %s -> %s\n", in_name, tmp_name);

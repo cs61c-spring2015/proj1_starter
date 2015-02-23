@@ -92,7 +92,7 @@ void test_translate_num() {
 void test_table_1() {
     int retval;
 
-    SymbolTable* tbl = create_table();
+    SymbolTable* tbl = create_table(SYMTBL_UNIQUE_NAME);
     CU_ASSERT_PTR_NOT_NULL(tbl);
 
     retval = add_to_table(tbl, "abc", 8);
@@ -118,12 +118,22 @@ void test_table_1() {
     char* arr[] = { "Error: name 'q45' already exists in table.",
                     "Error: address is not a multiple of 4." };
     check_lines_equal(arr, 2);
+
+    SymbolTable* tbl2 = create_table(SYMTBL_NON_UNIQUE);
+    CU_ASSERT_PTR_NOT_NULL(tbl2);
+
+    retval = add_to_table(tbl, "q45", 16);
+    CU_ASSERT_EQUAL(retval, 0);
+    retval = add_to_table(tbl, "q45", 24); 
+    CU_ASSERT_EQUAL(retval, 0);
+
+    free_table(tbl2);
 }
 
 void test_table_2() {
     int retval, max = 100;
 
-    SymbolTable* tbl = create_table();
+    SymbolTable* tbl = create_table(SYMTBL_UNIQUE_NAME);
     CU_ASSERT_PTR_NOT_NULL(tbl);
 
     char buf[10];
