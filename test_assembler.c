@@ -122,9 +122,9 @@ void test_table_1() {
     SymbolTable* tbl2 = create_table(SYMTBL_NON_UNIQUE);
     CU_ASSERT_PTR_NOT_NULL(tbl2);
 
-    retval = add_to_table(tbl, "q45", 16);
+    retval = add_to_table(tbl2, "q45", 16);
     CU_ASSERT_EQUAL(retval, 0);
-    retval = add_to_table(tbl, "q45", 24); 
+    retval = add_to_table(tbl2, "q45", 24); 
     CU_ASSERT_EQUAL(retval, 0);
 
     free_table(tbl2);
