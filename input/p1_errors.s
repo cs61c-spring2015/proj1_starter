@@ -14,6 +14,6 @@ l1: l2: addiu $t3, $t1, 5						# Multiple labels on one line
 		ori $t3, $t2, 0xABC
 		
 # Things to ignore
-		addiu $t3, $t5, 3						# invalid register
+		addiu $t3, $99, 3							# invalid register
 		ori $t1, $t0, 0xFFFFFFFF				# invalid immediate
 		bne $t0, $t1, not_found					# nonexistant label
